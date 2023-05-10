@@ -1,0 +1,4 @@
+{
+    "ConnectionString": "postgres://user:secret@localhost/prushka_beta?sslmode=disable",
+    "ServerPort": "8181"
+}
