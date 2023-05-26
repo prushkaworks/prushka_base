@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8181:8181"
+    volumes:
+      - .:/usr/src/app
+    command: go run ./cmd/prushka/main.go
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../postgres-db:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+        test: [ "CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}" ]
+        interval: 5s
+        timeout: 10s
+        retries: 5

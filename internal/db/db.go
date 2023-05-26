@@ -1,26 +1,52 @@
 package db
 
 import (
-	"database/sql"
-	"io/ioutil"
+	"fmt"
+	"log"
 	"os"
 
-	_ "github.com/lib/pq"
+	"github.com/joho/godotenv"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
-func Migrate(connStr string) {
-	rootDir, _ := os.Getwd()
-	tables, _ := ioutil.ReadFile(rootDir + "/migrations/tables.sql")
-	constraints, _ := ioutil.ReadFile(rootDir + "/migrations/constraints.sql")
-	db, err := sql.Open("postgres", connStr)
-	if err != nil {
-		panic(err)
-	}
-	defer db.Close()
+type Dbinstance struct {
+	Db *gorm.DB
+}
 
-	_, err = db.Exec(string(tables))
+var DB Dbinstance
+
+func ConnectDb() {
+	err := godotenv.Load()
 	if err != nil {
-		panic(err)
+		log.Fatal("Error loading .env file")
 	}
-	_, _ = db.Exec(string(constraints))
+
+	dsn := fmt.Sprintf(
+		"host=%s user=%s password=%s dbname=%s port=5432 sslmode=disable",
+		os.Getenv("HOST"),
+		os.Getenv("DB_USER"),
+		os.Getenv("DB_PASSWORD"),
+		os.Getenv("DB_NAME"),
+	)
+
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Silent),
+	})
+
+	if err != nil {
+		log.Fatal("Failed to connect to database. \n", err)
+		os.Exit(2)
+	}
+
+	log.Println("connected")
+	db.Logger = logger.Default.LogMode(logger.Silent)
+
+	log.Println("running migrations")
+	db.AutoMigrate(User{}, Privilege{}, Workspace{}, UserPrivilege{}, Desk{}, Column{}, Card{}, Label{}, Attachment{}, CardsLabel{})
+
+	DB = Dbinstance{
+		Db: db,
+	}
 }

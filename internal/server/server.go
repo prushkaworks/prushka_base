@@ -2,7 +2,6 @@ package server
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -15,21 +14,19 @@ import (
 type Server struct {
 	http.Server
 	router *mux.Router
-	config *Config
 }
 
 func New() *Server {
 	return &Server{
 		router: mux.NewRouter(),
-		config: configInit(),
 	}
 }
 
 func (s *Server) Run() {
-	db.Migrate(s.config.ConnectionString)
+	db.ConnectDb()
 	s.buildRoutes()
-	s.Addr = "localhost:" + s.config.ServerPort
-	fmt.Println("Server is listening...")
+	s.Addr = "127.0.0.1" + ":" + os.Getenv("PORT")
+	log.Println("Server is listening...")
 
 	idleConnsClosed := make(chan struct{})
 	go func() {
@@ -42,7 +39,7 @@ func (s *Server) Run() {
 			// Error from closing listeners, or context timeout:
 			log.Printf("HTTP server Shutdown: %v", err)
 		}
-		log.Printf("Closing...")
+		log.Printf("\tClosing...")
 		close(idleConnsClosed)
 	}()
 

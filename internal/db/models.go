@@ -1,76 +1,77 @@
 package db
 
-type Model interface {
-	GetById(ID int32)
-	GetAll() []Model
-}
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type User struct {
-	ID       int32
-	Name     string
-	Email    string
-	Password string
-}
-
-func (u *User) GetById(ID int32) {
-
+	gorm.Model
+	ID       int32  `json:"id" gorm:"primaryKey"`
+	Name     string `json:"name"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
 
 type Privilege struct {
-	ID   int32
-	Name string
+	gorm.Model
+	ID   int32  `json:"id" gorm:"primaryKey"`
+	Name string `json:"name"`
 }
 
 type Workspace struct {
-	ID          int32
-	Name        string
-	DateCreated string
+	gorm.Model
+	ID          int32     `json:"id" gorm:"primaryKey"`
+	Name        string    `json:"name"`
+	DateCreated time.Time `json:"date_created" gorm:"autoCreateTime"`
 }
 
 type UserPrivilege struct {
-	PrivilegeId int32
-	UserId      int32
-	WorkspaceId int32
+	gorm.Model
+	Privilege Privilege `json:"privilege" gorm:"embedded;embeddedPrefix:privilege_"`
+	User      User      `json:"user" gorm:"embedded;embeddedPrefix:user_"`
+	Workspace Workspace `json:"workspace" gorm:"embedded;embeddedPrefix:workspace_"`
 }
 
 type Desk struct {
-	ID          int32
-	Name        string
-	DateCreated string
-	WorkspaceId int32
+	ID          int32     `json:"id" gorm:"primaryKey"`
+	Name        string    `json:"name"`
+	DateCreated time.Time `json:"date_created" gorm:"autoCreateTime"`
+	Workspace   Workspace `json:"workspace" gorm:"embedded;embeddedPrefix:workspace_"`
 }
 
 type Column struct {
-	ID     int32
-	Name   string
-	DeskId int32
+	ID   int32  `json:"id" gorm:"primaryKey"`
+	Name string `json:"name"`
+	Desk Desk   `json:"desk" gorm:"embedded;embeddedPrefix:desk_"`
 }
 
 type Card struct {
-	ID             int32
-	Name           string
-	Description    string
-	DateCreated    string
-	DateExpiration string
-	IsDone         bool
-	ColumnId       int32
-	Assigned       int32
-	Creator        int32
+	ID             int32     `json:"id" gorm:"primaryKey"`
+	Name           string    `json:"name"`
+	Description    string    `json:"description" gorm:"text"`
+	DateCreated    time.Time `json:"date_created" gorm:"autoCreateTime"`
+	DateExpiration time.Time `json:"date_expiration"`
+	IsDone         bool      `json:"is_done"`
+	Column         Column    `json:"column" gorm:"embedded;embeddedPrefix:column_"`
+	Assigned       User      `json:"assigned" gorm:"embedded;embeddedPrefix:assigned_"`
+	Creator        User      `json:"creator" gorm:"embedded;embeddedPrefix:creator_"`
 }
 
 type Label struct {
-	ID    int32
-	Name  string
-	Color string
+	ID    int32  `json:"id" gorm:"primaryKey"`
+	Name  string `json:"name"`
+	Color string `json:"color"`
 }
 
 type Attachment struct {
-	ID     int32
-	Path   string
-	CardId int32
+	ID   int32  `json:"id" gorm:"primaryKey"`
+	Path string `json:"path"`
+	Card Card   `json:"card" gorm:"embedded;embeddedPrefix:card_"`
 }
 
 type CardsLabel struct {
-	CardId  int32
-	LabelId int32
+	Card  Card  `json:"card" gorm:"embedded;embeddedPrefix:card_"`
+	Label Label `json:"label" gorm:"embedded;embeddedPrefix:label_"`
 }
