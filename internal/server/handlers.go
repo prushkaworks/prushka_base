@@ -11,6 +11,7 @@ import (
 	"prushka/internal/db"
 	"reflect"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/fatih/color"
@@ -236,14 +237,16 @@ func AuthHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		if !parseJWT(*r, *user) { // Если токена нет
 			if checkPassword(*user, password) { // Если пароль совпадает
-				writeJWT(w, *r, *user)
+				token := writeJWT(w, *r, *user)
 				w.WriteHeader(http.StatusOK)
-				respBody, _ := json.Marshal(prepareData("ok"))
+				respBody, _ := json.Marshal(prepareData(struct {
+					Token string `json:"token"`
+				}{Token: token}))
 				fmt.Fprint(w, string(respBody))
 				return
 			} else {
 				w.WriteHeader(http.StatusUnauthorized)
-				respBody, _ := json.Marshal(prepareData("error"))
+				respBody, _ := json.Marshal(prepareData("Unauthorized"))
 				fmt.Fprint(w, string(respBody))
 				return
 			}
@@ -256,17 +259,20 @@ func AuthHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// func MainHandler(w http.ResponseWriter, r *http.Request) {
-// 	user, _ := getUserAndPassword(*r)
-// 	if !parseJWT(*r, *user) { // Если токена нет
-// 		w.WriteHeader(http.StatusUnauthorized)
-// 		respBody, _ := json.Marshal(prepareData("Error!"))
-// 		fmt.Fprint(w, string(respBody))
-// 		return
-// 	} else {
-// 		w.WriteHeader(http.StatusOK)
-// 		respBody, _ := json.Marshal(prepareData("Token!"))
-// 		fmt.Fprint(w, string(respBody))
-// 		return
-// 	}
-// }
+func Auth(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+		user, _ := getUserAndPassword(*req)
+		if strings.Contains(req.URL.Path, "auth") || strings.HasSuffix(req.URL.Path, "users/") && req.Method == http.MethodPost {
+			next.ServeHTTP(w, req)
+		} else {
+			if !parseJWT(*req, *user) {
+				w.WriteHeader(http.StatusUnauthorized)
+				respBody, _ := json.Marshal(prepareData("Unauthorized"))
+				fmt.Fprint(w, string(respBody))
+				return
+			} else {
+				next.ServeHTTP(w, req)
+			}
+		}
+	})
+}

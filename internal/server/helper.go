@@ -176,7 +176,7 @@ func checkPassword(u db.User, password string) bool {
 	return base64.URLEncoding.EncodeToString(hashedPassword[:]) == u.Password
 }
 
-func writeJWT(w http.ResponseWriter, r http.Request, u db.User) {
+func writeJWT(w http.ResponseWriter, r http.Request, u db.User) string {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
@@ -191,12 +191,12 @@ func writeJWT(w http.ResponseWriter, r http.Request, u db.User) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{"UserId": u.ID, "ExpiresAt": jwt.NewNumericDate(expire)})
 	ss, _ := token.SignedString([]byte(os.Getenv("JWT_SIGN_STRING")))
 
-	cook := http.Cookie{Name: "token", Value: ss, Expires: expire, Path: "/"}
-	http.SetCookie(w, &cook)
+	return ss
 }
 
 func parseJWT(r http.Request, u db.User) bool {
 	tokenString, err := r.Cookie("token")
+
 	if err != nil {
 		return false
 	}
@@ -205,6 +205,19 @@ func parseJWT(r http.Request, u db.User) bool {
 	token, _ := jwt.ParseWithClaims(tokenString.Value, claims, func(token *jwt.Token) (interface{}, error) {
 		return []byte(os.Getenv("JWT_SIGN_STRING")), nil
 	}, jwt.WithLeeway(5*time.Second))
+	var userID float64
+	for _, el := range claims {
+		val, ok := el.(float64)
+		if ok {
+			userID = val
+		}
+	}
 
-	return claims["UserID"] == fmt.Sprint(u.ID) && token.Valid
+	var usr db.User
+	if u.Name == "" {
+		db.DB.Model(db.User{}).Where("id = ?", int(userID)).First(&usr)
+		return fmt.Sprint(userID) == fmt.Sprint(usr.ID) && token.Valid
+	}
+
+	return fmt.Sprint(userID) == fmt.Sprint(u.ID) && token.Valid
 }

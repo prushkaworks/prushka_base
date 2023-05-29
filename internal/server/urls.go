@@ -40,7 +40,7 @@ func (s *Server) buildRoutes() {
 	s.router.Path("/cards_label/{id:[0-9]+}/").HandlerFunc(ModelHandler(db.CardsLabel{})).Methods("GET", "POST", "DELETE")
 	s.router.Path("/cards_label/").HandlerFunc(ModelHandler(db.CardsLabel{})).Methods("GET", "POST")
 
-	s.router.Use(LoggingAndJson)
+	s.router.Use(LoggingAndJson, Auth)
 	s.router.NotFoundHandler = LoggingAndJson(http.HandlerFunc(My404Handler))
 	s.Handler = s.router
 }
