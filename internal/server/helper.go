@@ -94,7 +94,8 @@ func prepareDataParams(data map[string][]string) map[string]interface{} {
 			continue
 		}
 		if strings.Contains(key, "_id") {
-			key = strings.ReplaceAll(key, "_", "")
+			dataParams[key] = value[0]
+			continue
 		}
 		r := []rune(key)
 		r[0] = unicode.ToUpper(r[0])

@@ -134,13 +134,19 @@ func ModelHandler(model interface{}) http.HandlerFunc {
 		modelInstance := reflect.New(t).Interface()
 		mainModel := db.DB.Model(model)
 
+		ids := r.URL.Query()["id"]
 		is_all := r.URL.Query()["all"]
 		limit := r.URL.Query()["limit"]
-		id := mux.Vars(r)["id"]
+		id := ""
+		if len(ids) > 0 {
+			id = ids[0]
+		}
+
+		r.ParseForm()
 
 		if id == "" { // url without id
 			if r.Method == http.MethodPost {
-				r.ParseForm()
+
 				id, _ := strconv.Atoi(r.PostFormValue("id"))
 				data := prepareDataParams(r.PostForm)
 
@@ -187,7 +193,6 @@ func ModelHandler(model interface{}) http.HandlerFunc {
 			id_int, _ := strconv.Atoi(id)
 
 			if r.Method == http.MethodPost {
-				r.ParseForm()
 				ins := mainModel.Where("id = ?", id_int)
 				for key, val := range r.PostForm {
 					ins.Update(key, val[0])
