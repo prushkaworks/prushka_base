@@ -60,6 +60,7 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 				Password:     base64.URLEncoding.EncodeToString(hashedPassword[:]),
 				IsAuthorized: false,
 			}
+			log.Println(password)
 
 			usrModel.Create(&user)
 			usrModel.Find(&user, id)
@@ -235,7 +236,7 @@ func AuthHandler(w http.ResponseWriter, r *http.Request) {
 			usrModel.Find(&user, user.ID).Update("is_authorized", true)
 		}
 	} else {
-		if !parseJWT(*r, *user) { // Если токена нет
+		if !parseJWT(*r) { // Если токена нет
 			if checkPassword(*user, password) { // Если пароль совпадает
 				token := writeJWT(w, *r, *user)
 				w.WriteHeader(http.StatusOK)
@@ -261,17 +262,16 @@ func AuthHandler(w http.ResponseWriter, r *http.Request) {
 
 func Auth(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		user, _ := getUserAndPassword(*req)
 		if strings.Contains(req.URL.Path, "auth") || strings.HasSuffix(req.URL.Path, "users/") && req.Method == http.MethodPost {
-			next.ServeHTTP(w, req)
+			next.ServeHTTP(w, req.Clone(ctx))
 		} else {
-			if !parseJWT(*req, *user) {
+			if !parseJWT(*req) {
 				w.WriteHeader(http.StatusUnauthorized)
 				respBody, _ := json.Marshal(prepareData("Unauthorized"))
 				fmt.Fprint(w, string(respBody))
 				return
 			} else {
-				next.ServeHTTP(w, req)
+				next.ServeHTTP(w, req.Clone(ctx))
 			}
 		}
 	})

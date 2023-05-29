@@ -194,7 +194,7 @@ func writeJWT(w http.ResponseWriter, r http.Request, u db.User) string {
 	return ss
 }
 
-func parseJWT(r http.Request, u db.User) bool {
+func parseJWT(r http.Request) bool {
 	tokenString, err := r.Cookie("token")
 
 	if err != nil {
@@ -214,10 +214,6 @@ func parseJWT(r http.Request, u db.User) bool {
 	}
 
 	var usr db.User
-	if u.Name == "" {
-		db.DB.Model(db.User{}).Where("id = ?", int(userID)).First(&usr)
-		return fmt.Sprint(userID) == fmt.Sprint(usr.ID) && token.Valid
-	}
-
-	return fmt.Sprint(userID) == fmt.Sprint(u.ID) && token.Valid
+	db.DB.Model(db.User{}).Where("id = ?", int(userID)).First(&usr)
+	return fmt.Sprint(userID) == fmt.Sprint(usr.ID) && token.Valid
 }
