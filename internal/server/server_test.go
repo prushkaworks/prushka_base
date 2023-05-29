@@ -22,7 +22,7 @@ func TestIndex(t *testing.T) {
 	router := mux.NewRouter()
 	router.NotFoundHandler = serv.LoggingAndJson(http.HandlerFunc(serv.My404Handler))
 	router.Use(serv.LoggingAndJson)
-	router.HandleFunc("/", serv.MainHandler)
+	// router.HandleFunc("/", serv.MainHandler)
 	s := httptest.NewServer(router)
 	defer s.Close()
 

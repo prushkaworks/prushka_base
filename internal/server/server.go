@@ -25,7 +25,7 @@ func New() *Server {
 func (s *Server) Run() {
 	db.ConnectDb()
 	s.buildRoutes()
-	s.Addr = "127.0.0.1" + ":" + os.Getenv("PORT")
+	s.Addr = "0.0.0.0" + ":" + os.Getenv("PORT")
 	log.Println("Server is listening...")
 
 	idleConnsClosed := make(chan struct{})

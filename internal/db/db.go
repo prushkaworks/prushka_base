@@ -6,16 +6,16 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	redis "github.com/redis/go-redis/v9"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
 
-type Dbinstance struct {
-	Db *gorm.DB
-}
-
-var DB Dbinstance
+var (
+	DB  *gorm.DB
+	RDB *redis.Client
+)
 
 func ConnectDb() {
 	err := godotenv.Load()
@@ -46,7 +46,10 @@ func ConnectDb() {
 	log.Println("running migrations")
 	db.AutoMigrate(User{}, Privilege{}, Workspace{}, UserPrivilege{}, Desk{}, Column{}, Card{}, Label{}, Attachment{}, CardsLabel{})
 
-	DB = Dbinstance{
-		Db: db,
-	}
+	DB = db
+	RDB = redis.NewClient(&redis.Options{
+		Addr:     os.Getenv("REDIS_HOST") + ":6379",
+		Password: os.Getenv("REDIS_PASSWORD"),
+		DB:       0, // use default DB
+	})
 }
