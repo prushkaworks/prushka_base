@@ -8,7 +8,6 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	"net/http/cookiejar"
 	"net/smtp"
 	"os"
 	"prushka/internal/db"
@@ -33,13 +32,6 @@ type Mail struct {
 	To      []string
 	Subject string
 	Body    string
-}
-
-var JAR *cookiejar.Jar
-
-func init() {
-	jar, _ := cookiejar.New(nil)
-	JAR = jar
 }
 
 func prepareData(rawStruct any) Data {
@@ -196,14 +188,15 @@ func writeJWT(u db.User) string {
 }
 
 func parseJWT(r http.Request) bool {
-	tokenString, err := r.Cookie("token")
+	tokenString := r.Header.Get("Authorization")
+	tokens := strings.Fields(tokenString)
 
-	if err != nil {
+	if len(tokens) != 2 && tokens[0] != "Bearer" {
 		return false
 	}
 
 	claims := jwt.MapClaims{}
-	token, _ := jwt.ParseWithClaims(tokenString.Value, claims, func(token *jwt.Token) (interface{}, error) {
+	token, _ := jwt.ParseWithClaims(tokens[1], claims, func(token *jwt.Token) (interface{}, error) {
 		return []byte(os.Getenv("JWT_SIGN_STRING")), nil
 	}, jwt.WithLeeway(5*time.Second))
 	var userID float64

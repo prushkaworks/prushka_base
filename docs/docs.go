@@ -40,10 +40,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -84,10 +139,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -109,7 +219,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/attachment/{id}/": {
+        "/attachment/{attachment_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -130,10 +240,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -174,10 +339,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -218,10 +438,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -264,10 +539,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -308,10 +638,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -333,7 +718,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/cards/{id}/": {
+        "/cards/{cards_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -354,10 +739,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -398,10 +838,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -442,10 +937,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -488,10 +1038,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -532,10 +1137,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -557,7 +1217,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/cards_label/{id}/": {
+        "/cards_label/{cards_label_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -578,10 +1238,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -622,10 +1337,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -666,10 +1436,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -712,10 +1537,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -756,10 +1636,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -781,7 +1716,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/column/{id}/": {
+        "/column/{column_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -802,10 +1737,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -846,10 +1836,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -890,10 +1935,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -936,10 +2036,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -980,10 +2135,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1005,7 +2215,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/desk/{id}/": {
+        "/desk/{desk_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -1026,10 +2236,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1070,10 +2335,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1114,10 +2434,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1160,10 +2535,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1204,10 +2634,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1229,7 +2714,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/label/{id}/": {
+        "/label/{label_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -1250,10 +2735,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1294,10 +2834,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1338,10 +2933,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1384,10 +3034,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1428,10 +3133,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1453,7 +3213,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/privilege/{id}/": {
+        "/privilege/{privilege_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -1474,10 +3234,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1518,10 +3333,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1562,10 +3432,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1608,10 +3533,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1652,10 +3632,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1677,7 +3712,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/user_privilege/{id}/": {
+        "/user_privilege/{user_privilege_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -1698,10 +3733,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1742,10 +3832,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1786,10 +3931,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -1837,8 +4037,15 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Get user with id",
-                        "name": "id",
-                        "in": "query"
+                        "name": "user_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
                     }
                 ],
                 "responses": {
@@ -1881,8 +4088,15 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Get user with id",
-                        "name": "id",
-                        "in": "query"
+                        "name": "user_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
                     }
                 ],
                 "responses": {
@@ -1901,7 +4115,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/users/{id}/": {
+        "/users/{user_id}/": {
             "get": {
                 "description": "CRUD and auth users",
                 "produces": [
@@ -1927,8 +4141,15 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Get user with id",
-                        "name": "id",
-                        "in": "query"
+                        "name": "user_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
                     }
                 ],
                 "responses": {
@@ -1971,8 +4192,15 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Get user with id",
-                        "name": "id",
-                        "in": "query"
+                        "name": "user_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
                     }
                 ],
                 "responses": {
@@ -2015,8 +4243,15 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Get user with id",
-                        "name": "id",
-                        "in": "query"
+                        "name": "user_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
                     }
                 ],
                 "responses": {
@@ -2056,10 +4291,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -2100,10 +4390,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -2125,7 +4470,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/workspace/{id}/": {
+        "/workspace/{workspace_id}/": {
             "get": {
                 "description": "CRUD for models",
                 "produces": [
@@ -2146,10 +4491,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -2190,10 +4590,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {
@@ -2234,10 +4689,65 @@ const docTemplate = `{
                         "in": "query"
                     },
                     {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header"
+                    },
+                    {
                         "type": "integer",
-                        "description": "Get model with id",
-                        "name": "id",
-                        "in": "query"
+                        "description": "Get privilege with id",
+                        "name": "privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get card with id",
+                        "name": "cards_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get attachment with id",
+                        "name": "attachment_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get label with id",
+                        "name": "label_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get column with id",
+                        "name": "column_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get desk with id",
+                        "name": "desk_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get workspace with id",
+                        "name": "workspace_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get user_privilege with id",
+                        "name": "user_privilege_id",
+                        "in": "path"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Get cards_label with id",
+                        "name": "cards_label_id",
+                        "in": "path"
                     }
                 ],
                 "responses": {

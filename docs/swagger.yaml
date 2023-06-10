@@ -165,9 +165,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -194,9 +231,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -212,7 +286,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /attachment/{id}/:
+  /attachment/{attachment_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -224,9 +298,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -253,9 +364,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -282,9 +430,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -312,9 +497,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -341,9 +563,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -359,7 +618,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /cards/{id}/:
+  /cards/{cards_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -371,9 +630,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -400,9 +696,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -429,9 +762,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -459,9 +829,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -488,9 +895,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -506,7 +950,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /cards_label/{id}/:
+  /cards_label/{cards_label_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -518,9 +962,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -547,9 +1028,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -576,9 +1094,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -606,9 +1161,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -635,9 +1227,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -653,7 +1282,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /column/{id}/:
+  /column/{column_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -665,9 +1294,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -694,9 +1360,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -723,9 +1426,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -753,9 +1493,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -782,9 +1559,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -800,7 +1614,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /desk/{id}/:
+  /desk/{desk_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -812,9 +1626,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -841,9 +1692,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -870,9 +1758,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -900,9 +1825,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -929,9 +1891,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -947,7 +1946,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /label/{id}/:
+  /label/{label_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -959,9 +1958,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -988,9 +2024,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1017,9 +2090,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1047,9 +2157,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1076,9 +2223,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1094,7 +2278,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /privilege/{id}/:
+  /privilege/{privilege_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -1106,9 +2290,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1135,9 +2356,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1164,9 +2422,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1194,9 +2489,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1223,9 +2555,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1241,7 +2610,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /user_privilege/{id}/:
+  /user_privilege/{user_privilege_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -1253,9 +2622,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1282,9 +2688,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1311,9 +2754,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1342,9 +2822,14 @@ paths:
         name: limit
         type: integer
       - description: Get user with id
-        in: query
-        name: id
+        in: path
+        name: user_id
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
       produces:
       - application/json
       responses:
@@ -1371,9 +2856,14 @@ paths:
         name: limit
         type: integer
       - description: Get user with id
-        in: query
-        name: id
+        in: path
+        name: user_id
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
       produces:
       - application/json
       responses:
@@ -1388,7 +2878,7 @@ paths:
       summary: Work with users
       tags:
       - users
-  /users/{id}/:
+  /users/{user_id}/:
     delete:
       description: CRUD and auth users
       parameters:
@@ -1401,9 +2891,14 @@ paths:
         name: limit
         type: integer
       - description: Get user with id
-        in: query
-        name: id
+        in: path
+        name: user_id
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
       produces:
       - application/json
       responses:
@@ -1430,9 +2925,14 @@ paths:
         name: limit
         type: integer
       - description: Get user with id
-        in: query
-        name: id
+        in: path
+        name: user_id
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
       produces:
       - application/json
       responses:
@@ -1459,9 +2959,14 @@ paths:
         name: limit
         type: integer
       - description: Get user with id
-        in: query
-        name: id
+        in: path
+        name: user_id
         type: integer
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
       produces:
       - application/json
       responses:
@@ -1488,9 +2993,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1517,9 +3059,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1535,7 +3114,7 @@ paths:
         "404":
           description: Not Found
       summary: Work with all existing models
-  /workspace/{id}/:
+  /workspace/{workspace_id}/:
     delete:
       description: CRUD for models
       parameters:
@@ -1547,9 +3126,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1576,9 +3192,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json
@@ -1605,9 +3258,46 @@ paths:
         in: query
         name: limit
         type: integer
-      - description: Get model with id
-        in: query
-        name: id
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        type: string
+      - description: Get privilege with id
+        in: path
+        name: privilege_id
+        type: integer
+      - description: Get card with id
+        in: path
+        name: cards_id
+        type: integer
+      - description: Get attachment with id
+        in: path
+        name: attachment_id
+        type: integer
+      - description: Get label with id
+        in: path
+        name: label_id
+        type: integer
+      - description: Get column with id
+        in: path
+        name: column_id
+        type: integer
+      - description: Get desk with id
+        in: path
+        name: desk_id
+        type: integer
+      - description: Get workspace with id
+        in: path
+        name: workspace_id
+        type: integer
+      - description: Get user_privilege with id
+        in: path
+        name: user_privilege_id
+        type: integer
+      - description: Get cards_label with id
+        in: path
+        name: cards_label_id
         type: integer
       produces:
       - application/json

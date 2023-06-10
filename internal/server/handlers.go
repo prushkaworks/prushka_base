@@ -27,14 +27,14 @@ var ctx = context.Background()
 // @Produce  json
 // @Param all query bool false "Get all users"
 // @Param limit query int false "Get n users"
-// @Param id query int false "Get user with id"
-// @Param token cookie string false "AuthToken" default(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2ODY0MjA5MjYsIlVzZXJJZCI6MTAwMDB9.xfAMwAPqtQJbNQqo3VN8gJM5baRDc8wfdqv0uxvfW20)
+// @Param user_id path int false "Get user with id"
 // @Success 200 {object} db.User
 // @Success 200 {array} db.User
 // @Failure 404
-// @Router /users/{id}/ [get]
-// @Router /users/{id}/ [post]
-// @Router /users/{id}/ [delete]
+// @Param Authorization header string false "Insert your access token" default(Bearer <Add access token here>)
+// @Router /users/{user_id}/ [get]
+// @Router /users/{user_id}/ [post]
+// @Router /users/{user_id}/ [delete]
 // @Router /users/ [get]
 // @Router /users/ [post]
 func UserHandler(w http.ResponseWriter, r *http.Request) {
@@ -144,7 +144,6 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 // @Produce  json
 // @Param all query bool false "Get all models"
 // @Param limit query int false "Get n models"
-// @Param id query int false "Get model with id"
 // @Success 200 {object} db.Privilege
 // @Success 200 {array} db.Privilege
 // @Success 200 {object} db.Card
@@ -165,49 +164,59 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 // @Success 200 {array} db.CardsLabel
 // @Failure 404
 // @Failure 401
-// @Router /privilege/{id}/ [get]
-// @Router /privilege/{id}/ [post]
-// @Router /privilege/{id}/ [delete]
+// @Param Authorization header string false "Insert your access token" default(Bearer <Add access token here>)
+// @Param privilege_id path int false "Get privilege with id"
+// @Router /privilege/{privilege_id}/ [get]
+// @Router /privilege/{privilege_id}/ [post]
+// @Router /privilege/{privilege_id}/ [delete]
 // @Router /privilege/ [get]
 // @Router /privilege/ [post]
-// @Router /cards/{id}/ [get]
-// @Router /cards/{id}/ [post]
-// @Router /cards/{id}/ [delete]
+// @Param cards_id path int false "Get card with id"
+// @Router /cards/{cards_id}/ [get]
+// @Router /cards/{cards_id}/ [post]
+// @Router /cards/{cards_id}/ [delete]
 // @Router /cards/ [get]
 // @Router /cards/ [post]
-// @Router /attachment/{id}/ [get]
-// @Router /attachment/{id}/ [post]
-// @Router /attachment/{id}/ [delete]
+// @Param attachment_id path int false "Get attachment with id"
+// @Router /attachment/{attachment_id}/ [get]
+// @Router /attachment/{attachment_id}/ [post]
+// @Router /attachment/{attachment_id}/ [delete]
 // @Router /attachment/ [get]
 // @Router /attachment/ [post]
-// @Router /label/{id}/ [get]
-// @Router /label/{id}/ [post]
-// @Router /label/{id}/ [delete]
+// @Param label_id path int false "Get label with id"
+// @Router /label/{label_id}/ [get]
+// @Router /label/{label_id}/ [post]
+// @Router /label/{label_id}/ [delete]
 // @Router /label/ [get]
 // @Router /label/ [post]
-// @Router /column/{id}/ [get]
-// @Router /column/{id}/ [post]
-// @Router /column/{id}/ [delete]
+// @Param column_id path int false "Get column with id"
+// @Router /column/{column_id}/ [get]
+// @Router /column/{column_id}/ [post]
+// @Router /column/{column_id}/ [delete]
 // @Router /column/ [get]
 // @Router /column/ [post]
-// @Router /desk/{id}/ [get]
-// @Router /desk/{id}/ [post]
-// @Router /desk/{id}/ [delete]
+// @Param desk_id path int false "Get desk with id"
+// @Router /desk/{desk_id}/ [get]
+// @Router /desk/{desk_id}/ [post]
+// @Router /desk/{desk_id}/ [delete]
 // @Router /desk/ [get]
 // @Router /desk/ [post]
-// @Router /workspace/{id}/ [get]
-// @Router /workspace/{id}/ [post]
-// @Router /workspace/{id}/ [delete]
+// @Param workspace_id path int false "Get workspace with id"
+// @Router /workspace/{workspace_id}/ [get]
+// @Router /workspace/{workspace_id}/ [post]
+// @Router /workspace/{workspace_id}/ [delete]
 // @Router /workspace/ [get]
 // @Router /workspace/ [post]
-// @Router /user_privilege/{id}/ [get]
-// @Router /user_privilege/{id}/ [post]
-// @Router /user_privilege/{id}/ [delete]
+// @Param user_privilege_id path int false "Get user_privilege with id"
+// @Router /user_privilege/{user_privilege_id}/ [get]
+// @Router /user_privilege/{user_privilege_id}/ [post]
+// @Router /user_privilege/{user_privilege_id}/ [delete]
 // @Router /user_privilege/ [get]
 // @Router /user_privilege/ [post]
-// @Router /cards_label/{id}/ [get]
-// @Router /cards_label/{id}/ [post]
-// @Router /cards_label/{id}/ [delete]
+// @Param cards_label_id path int false "Get cards_label with id"
+// @Router /cards_label/{cards_label_id}/ [get]
+// @Router /cards_label/{cards_label_id}/ [post]
+// @Router /cards_label/{cards_label_id}/ [delete]
 // @Router /cards_label/ [get]
 // @Router /cards_label/ [post]
 func ModelHandler(model interface{}) http.HandlerFunc {
