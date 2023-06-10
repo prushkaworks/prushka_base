@@ -1,0 +1,1626 @@
+basePath: /
+definitions:
+  db.Attachment:
+    properties:
+      card_id:
+        example: 32
+        type: integer
+      id:
+        example: 1
+        type: integer
+      path:
+        example: /attachments/456.jpeg
+        type: string
+    type: object
+  db.Card:
+    properties:
+      assigned_id:
+        example: 660
+        type: integer
+      column_id:
+        example: 1
+        type: integer
+      creator_id:
+        example: 661
+        type: integer
+      date_created:
+        example: "2019-11-09T21:21:46+00:00"
+        type: string
+      date_expiration:
+        example: "2020-11-09T21:21:46+00:00"
+        type: string
+      description:
+        example: Some long description
+        type: string
+      id:
+        example: 1
+        type: integer
+      is_done:
+        example: false
+        type: boolean
+      name:
+        example: Create routers
+        type: string
+    type: object
+  db.CardsLabel:
+    properties:
+      card_id:
+        example: 32
+        type: integer
+      id:
+        example: 1
+        type: integer
+      label_id:
+        example: 64
+        type: integer
+    type: object
+  db.Column:
+    properties:
+      desk_id:
+        example: 2
+        type: integer
+      id:
+        example: 1
+        type: integer
+      name:
+        example: TO DO
+        type: string
+    type: object
+  db.Desk:
+    properties:
+      date_created:
+        example: "2019-11-09T21:21:46+00:00"
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: Backend
+        type: string
+      workspace_id:
+        example: 1
+        type: integer
+    type: object
+  db.Label:
+    properties:
+      color:
+        example: SomeHexColor
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: SomeLabel
+        type: string
+    type: object
+  db.Privilege:
+    properties:
+      id:
+        example: 1
+        type: integer
+      name:
+        example: admin
+        type: string
+    type: object
+  db.User:
+    properties:
+      email:
+        example: dmitrii@mail.su
+        type: string
+      id:
+        example: 1
+        type: integer
+      is_authorized:
+        example: true
+        type: boolean
+      name:
+        example: Dmitrii
+        type: string
+    type: object
+  db.UserPrivilege:
+    properties:
+      id:
+        example: 1
+        type: integer
+      privilege_id:
+        example: 2
+        type: integer
+      user_id:
+        example: 3
+        type: integer
+      workspace_id:
+        example: 4
+        type: integer
+    type: object
+  db.Workspace:
+    properties:
+      date_created:
+        example: "2019-11-09T21:21:46+00:00"
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: SomeProjectName
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: igorek.denisenko.03@mail.ru
+    name: OLD_GREEN_FROG
+  description: Service for managing projects
+  title: PrushkaAPI
+  version: "1.0"
+paths:
+  /attachment/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /attachment/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /cards/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /cards/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /cards_label/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /cards_label/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /column/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /column/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /desk/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /desk/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /label/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /label/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /privilege/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /privilege/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /user_privilege/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /user_privilege/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /users/:
+    get:
+      description: CRUD and auth users
+      parameters:
+      - description: Get all users
+        in: query
+        name: all
+        type: boolean
+      - description: Get n users
+        in: query
+        name: limit
+        type: integer
+      - description: Get user with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.User'
+            type: array
+        "404":
+          description: Not Found
+      summary: Work with users
+      tags:
+      - users
+    post:
+      description: CRUD and auth users
+      parameters:
+      - description: Get all users
+        in: query
+        name: all
+        type: boolean
+      - description: Get n users
+        in: query
+        name: limit
+        type: integer
+      - description: Get user with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.User'
+            type: array
+        "404":
+          description: Not Found
+      summary: Work with users
+      tags:
+      - users
+  /users/{id}/:
+    delete:
+      description: CRUD and auth users
+      parameters:
+      - description: Get all users
+        in: query
+        name: all
+        type: boolean
+      - description: Get n users
+        in: query
+        name: limit
+        type: integer
+      - description: Get user with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.User'
+            type: array
+        "404":
+          description: Not Found
+      summary: Work with users
+      tags:
+      - users
+    get:
+      description: CRUD and auth users
+      parameters:
+      - description: Get all users
+        in: query
+        name: all
+        type: boolean
+      - description: Get n users
+        in: query
+        name: limit
+        type: integer
+      - description: Get user with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.User'
+            type: array
+        "404":
+          description: Not Found
+      summary: Work with users
+      tags:
+      - users
+    post:
+      description: CRUD and auth users
+      parameters:
+      - description: Get all users
+        in: query
+        name: all
+        type: boolean
+      - description: Get n users
+        in: query
+        name: limit
+        type: integer
+      - description: Get user with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.User'
+            type: array
+        "404":
+          description: Not Found
+      summary: Work with users
+      tags:
+      - users
+  /workspace/:
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+  /workspace/{id}/:
+    delete:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    get:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+    post:
+      description: CRUD for models
+      parameters:
+      - description: Get all models
+        in: query
+        name: all
+        type: boolean
+      - description: Get n models
+        in: query
+        name: limit
+        type: integer
+      - description: Get model with id
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/db.CardsLabel'
+            type: array
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+      summary: Work with all existing models
+swagger: "2.0"

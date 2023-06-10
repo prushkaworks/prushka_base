@@ -177,7 +177,7 @@ func checkPassword(u db.User, password string) bool {
 	return base64.URLEncoding.EncodeToString(hashedPassword[:]) == u.Password
 }
 
-func writeJWT(w http.ResponseWriter, r http.Request, u db.User) string {
+func writeJWT(u db.User) string {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")

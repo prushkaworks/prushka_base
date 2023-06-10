@@ -20,18 +20,23 @@ import (
 
 var ctx = context.Background()
 
-// func MainHandler(w http.ResponseWriter, r *http.Request) {
-// 	var users []db.User
-// 	user := db.User{
-// 		ID: 23, Name: "Dmitriy", Email: "safr@328392mail.ru", Password: "3232323",
-// 	}
-// 	usr_model := db.DB.Db.Model(db.User{})
-// 	usr_model.Create(&user)
-// 	usr_model.Find(&users)
-// 	respBody, _ := json.Marshal(users)
-// 	fmt.Fprint(w, string(respBody))
-// }
-
+// UserHandler godoc
+// @Summary Work with users
+// @Description CRUD and auth users
+// @Tags users
+// @Produce  json
+// @Param all query bool false "Get all users"
+// @Param limit query int false "Get n users"
+// @Param id query int false "Get user with id"
+// @Param token cookie string false "AuthToken" default(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFeHBpcmVzQXQiOjE2ODY0MjA5MjYsIlVzZXJJZCI6MTAwMDB9.xfAMwAPqtQJbNQqo3VN8gJM5baRDc8wfdqv0uxvfW20)
+// @Success 200 {object} db.User
+// @Success 200 {array} db.User
+// @Failure 404
+// @Router /users/{id}/ [get]
+// @Router /users/{id}/ [post]
+// @Router /users/{id}/ [delete]
+// @Router /users/ [get]
+// @Router /users/ [post]
 func UserHandler(w http.ResponseWriter, r *http.Request) {
 	var users []db.User
 	var user db.User
@@ -48,10 +53,6 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 			password := r.PostFormValue("password")
 			randomWord := seedGenerator(10)
 			hashedPassword := sha256.Sum256([]byte(password + randomWord))
-			result := db.RDB.RPush(ctx, fmt.Sprint(id), randomWord)
-			if _, err := result.Result(); err != nil {
-				log.Fatal(err)
-			}
 
 			user = db.User{
 				ID:           int32(id),
@@ -60,9 +61,19 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 				Password:     base64.URLEncoding.EncodeToString(hashedPassword[:]),
 				IsAuthorized: false,
 			}
-			log.Println(password)
 
-			usrModel.Create(&user)
+			if err := usrModel.Create(&user).Error; err != nil {
+				respBody, _ := json.Marshal(prepareData(err.Error()))
+				w.WriteHeader(http.StatusConflict)
+				fmt.Fprint(w, string(respBody))
+				return
+			}
+
+			result := db.RDB.RPush(ctx, fmt.Sprint(id), randomWord)
+			if _, err := result.Result(); err != nil {
+				log.Fatal(err)
+			}
+
 			usrModel.Find(&user, id)
 			if user.ID == int32(id) {
 				sendRegisterEmail(user.Email, user.ID)
@@ -127,6 +138,78 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// ModelHandler godoc
+// @Summary Work with all existing models
+// @Description CRUD for models
+// @Produce  json
+// @Param all query bool false "Get all models"
+// @Param limit query int false "Get n models"
+// @Param id query int false "Get model with id"
+// @Success 200 {object} db.Privilege
+// @Success 200 {array} db.Privilege
+// @Success 200 {object} db.Card
+// @Success 200 {array} db.Card
+// @Success 200 {object} db.Attachment
+// @Success 200 {array} db.Attachment
+// @Success 200 {object} db.Label
+// @Success 200 {array} db.Label
+// @Success 200 {object} db.Column
+// @Success 200 {array} db.Column
+// @Success 200 {object} db.Desk
+// @Success 200 {array} db.Desk
+// @Success 200 {object} db.Workspace
+// @Success 200 {array} db.Workspace
+// @Success 200 {object} db.UserPrivilege
+// @Success 200 {array} db.UserPrivilege
+// @Success 200 {object} db.CardsLabel
+// @Success 200 {array} db.CardsLabel
+// @Failure 404
+// @Failure 401
+// @Router /privilege/{id}/ [get]
+// @Router /privilege/{id}/ [post]
+// @Router /privilege/{id}/ [delete]
+// @Router /privilege/ [get]
+// @Router /privilege/ [post]
+// @Router /cards/{id}/ [get]
+// @Router /cards/{id}/ [post]
+// @Router /cards/{id}/ [delete]
+// @Router /cards/ [get]
+// @Router /cards/ [post]
+// @Router /attachment/{id}/ [get]
+// @Router /attachment/{id}/ [post]
+// @Router /attachment/{id}/ [delete]
+// @Router /attachment/ [get]
+// @Router /attachment/ [post]
+// @Router /label/{id}/ [get]
+// @Router /label/{id}/ [post]
+// @Router /label/{id}/ [delete]
+// @Router /label/ [get]
+// @Router /label/ [post]
+// @Router /column/{id}/ [get]
+// @Router /column/{id}/ [post]
+// @Router /column/{id}/ [delete]
+// @Router /column/ [get]
+// @Router /column/ [post]
+// @Router /desk/{id}/ [get]
+// @Router /desk/{id}/ [post]
+// @Router /desk/{id}/ [delete]
+// @Router /desk/ [get]
+// @Router /desk/ [post]
+// @Router /workspace/{id}/ [get]
+// @Router /workspace/{id}/ [post]
+// @Router /workspace/{id}/ [delete]
+// @Router /workspace/ [get]
+// @Router /workspace/ [post]
+// @Router /user_privilege/{id}/ [get]
+// @Router /user_privilege/{id}/ [post]
+// @Router /user_privilege/{id}/ [delete]
+// @Router /user_privilege/ [get]
+// @Router /user_privilege/ [post]
+// @Router /cards_label/{id}/ [get]
+// @Router /cards_label/{id}/ [post]
+// @Router /cards_label/{id}/ [delete]
+// @Router /cards_label/ [get]
+// @Router /cards_label/ [post]
 func ModelHandler(model interface{}) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		t := reflect.TypeOf(model)
@@ -243,7 +326,7 @@ func AuthHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		if !parseJWT(*r) { // Если токена нет
 			if checkPassword(*user, password) { // Если пароль совпадает
-				token := writeJWT(w, *r, *user)
+				token := writeJWT(*user)
 				w.WriteHeader(http.StatusOK)
 				respBody, _ := json.Marshal(prepareData(struct {
 					Token string `json:"token"`
@@ -267,7 +350,7 @@ func AuthHandler(w http.ResponseWriter, r *http.Request) {
 
 func Auth(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		if strings.Contains(req.URL.Path, "auth") || strings.HasSuffix(req.URL.Path, "users/") && req.Method == http.MethodPost {
+		if strings.Contains(req.URL.Path, "swagger") || strings.Contains(req.URL.Path, "auth") || strings.HasSuffix(req.URL.Path, "users/") && req.Method == http.MethodPost {
 			next.ServeHTTP(w, req.Clone(ctx))
 		} else {
 			if !parseJWT(*req) {

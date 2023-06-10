@@ -4,6 +4,9 @@
 указать в нем все необходимые коннекты к базам (postgres и redis), а также
 данные майлера (лично я использую для этого gmail).
 
+
+<br>
+
 Запуск основного приложения:
 ```
 $ go run ./cmd/prushka/main.go
@@ -17,4 +20,9 @@ $ docker-compose up -d
 Запуск тестов: 
 ```
 $ go test -v ./internal/server
+```
+
+Генерация документации swagger (на всякий):
+```
+$ ~/go/bin/swag init -d ./internal/ --parseDependency --parseInternal --parseDepth 1 -g ./server/server.go
 ```

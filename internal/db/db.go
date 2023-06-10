@@ -1,6 +1,9 @@
 package db
 
 import (
+	"context"
+	"crypto/sha256"
+	"encoding/base64"
 	"fmt"
 	"log"
 	"os"
@@ -16,6 +19,7 @@ var (
 	DB  *gorm.DB
 	RDB *redis.Client
 )
+var ctx = context.Background()
 
 func ConnectDb() {
 	err := godotenv.Load()
@@ -52,4 +56,20 @@ func ConnectDb() {
 		Password: os.Getenv("REDIS_PASSWORD"),
 		DB:       0, // use default DB
 	})
+
+	usrModel := DB.Model(User{})
+	hashedPassword := sha256.Sum256([]byte("123456" + "loneliness"))
+	user := User{
+		ID:           10000,
+		Name:         "test",
+		Email:        "test@test.test",
+		Password:     base64.URLEncoding.EncodeToString(hashedPassword[:]),
+		IsAuthorized: true,
+	}
+
+	usrModel.Create(&user)
+	result := RDB.RPush(ctx, fmt.Sprint(10000), "loneliness")
+	if _, err := result.Result(); err != nil {
+		log.Fatal(err)
+	}
 }
