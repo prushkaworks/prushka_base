@@ -62,6 +62,13 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 				IsAuthorized: false,
 			}
 
+			if user.Name == "" || user.Email == "" {
+				respBody, _ := json.Marshal(prepareData("Bad request"))
+				w.WriteHeader(http.StatusBadRequest)
+				fmt.Fprint(w, string(respBody))
+				return
+			}
+
 			if err := usrModel.Create(&user).Error; err != nil {
 				respBody, _ := json.Marshal(prepareData(err.Error()))
 				w.WriteHeader(http.StatusConflict)
@@ -242,7 +249,20 @@ func ModelHandler(model interface{}) http.HandlerFunc {
 				id, _ := strconv.Atoi(r.PostFormValue("id"))
 				data := prepareDataParams(r.PostForm)
 
-				mainModel.Create(data)
+				if len(data) == 0 {
+					respBody, _ := json.Marshal(prepareData("Bad request"))
+					w.WriteHeader(http.StatusBadRequest)
+					fmt.Fprint(w, string(respBody))
+					return
+				}
+
+				if err := mainModel.Create(data).Error; err != nil {
+					respBody, _ := json.Marshal(prepareData(err.Error()))
+					w.WriteHeader(http.StatusConflict)
+					fmt.Fprint(w, string(respBody))
+					return
+				}
+
 				mainModel.Find(&modelInstance, id)
 				respBody, _ := json.Marshal(prepareData(modelInstance))
 				fmt.Fprint(w, string(respBody))
