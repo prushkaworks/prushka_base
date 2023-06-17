@@ -10,6 +10,7 @@ services:
     volumes:
       - .:/usr/src/app
     command: go run ./cmd/prushka/main.go
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy

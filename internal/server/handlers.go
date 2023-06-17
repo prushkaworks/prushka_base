@@ -76,13 +76,12 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 
-			result := db.RDB.RPush(ctx, fmt.Sprint(id), randomWord)
+			result := db.RDB.RPush(ctx, fmt.Sprint(user.ID), randomWord)
 			if _, err := result.Result(); err != nil {
 				log.Fatal(err)
 			}
 
-			usrModel.Find(&user, id)
-			if user.ID == int32(id) {
+			if user.ID != 0 {
 				sendRegisterEmail(user.Email, user.ID)
 			}
 			respBody, _ := json.Marshal(prepareData(user))
@@ -329,9 +328,6 @@ func My404Handler(w http.ResponseWriter, r *http.Request) {
 func LoggingAndJson(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		w.Header().Set("Access-Control-Allow-Origin", "*")
-		// w.Header().Set("Access-Control-Allow-Credentials", "true")
-		// w.Header().Set("Access-Control-Allow-Origin", "https://localhost:3000")
 
 		start := time.Now()
 		next.ServeHTTP(w, req)

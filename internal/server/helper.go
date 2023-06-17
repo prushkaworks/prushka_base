@@ -191,7 +191,11 @@ func parseJWT(r http.Request) bool {
 	tokenString := r.Header.Get("Authorization")
 	tokens := strings.Fields(tokenString)
 
-	if len(tokens) != 2 && tokens[0] != "Bearer" {
+	if len(tokens) != 2 {
+		return false
+	}
+
+	if tokens[0] != "Bearer" {
 		return false
 	}
 
