@@ -15,7 +15,6 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/gorilla/mux"
 )
 
 var ctx = context.Background()
@@ -44,9 +43,14 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 
 	is_all := r.URL.Query()["all"]
 	limit := r.URL.Query()["limit"]
-	id := mux.Vars(r)["id"]
+	id := r.URL.Query()["id"]
+	actualID := ""
+	if len(id) == 1 {
+		actualID = id[0]
+	}
 
-	if id == "" { // url without id
+	if actualID == "" { // url without id
+		log.Println(id)
 		if r.Method == http.MethodPost {
 			r.ParseForm()
 			id, _ := strconv.Atoi(r.PostFormValue("id"))
@@ -123,7 +127,7 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	} else { // url with id
 
-		id_int, _ := strconv.Atoi(id)
+		id_int, _ := strconv.Atoi(actualID)
 
 		if r.Method == http.MethodPost {
 			r.ParseForm()
