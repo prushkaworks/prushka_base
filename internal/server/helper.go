@@ -203,14 +203,13 @@ func parseJWT(r http.Request) bool {
 	token, _ := jwt.ParseWithClaims(tokens[1], claims, func(token *jwt.Token) (interface{}, error) {
 		return []byte(os.Getenv("JWT_SIGN_STRING")), nil
 	}, jwt.WithLeeway(5*time.Second))
-	var userID float64
+	var userID int32
 	for _, el := range claims {
-		val, ok := el.(float64)
+		val, ok := el.(int32)
 		if ok {
 			userID = val
 		}
 	}
-
 	var usr db.User
 	db.DB.Model(db.User{}).Where("id = ?", int(userID)).First(&usr)
 	return fmt.Sprint(userID) == fmt.Sprint(usr.ID) && token.Valid
