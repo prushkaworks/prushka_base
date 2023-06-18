@@ -72,4 +72,15 @@ func ConnectDb() {
 	if _, err := result.Result(); err != nil {
 		log.Fatal(err)
 	}
+
+	privileges := []Privilege{
+		{ID: 1, Name: "admin"},
+		{ID: 2, Name: "user"},
+		{ID: 3, Name: "guest"},
+	}
+
+	for _, privilege := range privileges {
+		var priv = privilege
+		DB.Model(Privilege{}).Create(&priv)
+	}
 }
