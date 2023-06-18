@@ -15,6 +15,7 @@ import (
 	"time"
 
 	"github.com/fatih/color"
+	"gorm.io/gorm/clause"
 )
 
 var ctx = context.Background()
@@ -259,14 +260,18 @@ func ModelHandler(model interface{}) http.HandlerFunc {
 					return
 				}
 
-				if err := mainModel.Create(data).Error; err != nil {
+				if err := mainModel.Clauses(clause.Returning{}).Create(data).Error; err != nil {
 					respBody, _ := json.Marshal(prepareData(err.Error()))
 					w.WriteHeader(http.StatusConflict)
 					fmt.Fprint(w, string(respBody))
 					return
 				}
 
-				mainModel.Find(&modelInstance, id)
+				if id == 0 {
+					mainModel.Find(&modelInstance, data["id"])
+				} else {
+					mainModel.Find(&modelInstance, id)
+				}
 				respBody, _ := json.Marshal(prepareData(modelInstance))
 				fmt.Fprint(w, string(respBody))
 				return
